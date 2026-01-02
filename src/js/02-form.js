@@ -22,9 +22,16 @@ form.addEventListener('input', event => {
 form.addEventListener('submit', event => {
   event.preventDefault();
 
+  const email = form.elements.email.value.trim();
+  const message = form.elements.message.value.trim();
+
+  if (!email || !message) {
+    return;
+  }
+
   const data = {
-    email: form.elements.email.value,
-    message: form.elements.message.value,
+    email,
+    message,
   };
 
   console.log(data);
